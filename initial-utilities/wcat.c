@@ -3,9 +3,13 @@
 
 int main(int argc, char* argv[]) {
 	char buffer[50];
-	int lineNum = 0;
 	char charPtr;
-	FILE *fp = fopen(argv[1], "r");
+	for (int i = 1; i < argc; i++) {
+	printf("--------------------FILE NAME: ");
+	printf("%s", argv[i]);
+	printf("--------------------\n");
+	int lineNum = 0;
+	FILE *fp = fopen(argv[i], "r");
 	if (fp == NULL) {
 		printf("cannot open file\n");
 		exit(1);
@@ -18,10 +22,11 @@ int main(int argc, char* argv[]) {
 		}
 	}
 	rewind(fp);
-	//printf("Number of lines: %d\n", lineNum);
-	for (int i = 0; i < lineNum; i++) {
+	for (int j = 0; j < lineNum; j++) {
 		fgets(buffer, 50, fp);
 		printf("%s", buffer);
 	}
 	fclose(fp);
+	printf("--------------------------END OF FILE--------------------\n");
+	}
 }
