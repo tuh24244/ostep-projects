@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
 //        printf("lineNum: %d\n", lineNum);
 //        printf("fileLength: %d\n", fileLength);
         for (int i = 0, j = 0; i < lineNum;) {
-                char character = getc(fp);
+                character = getc(fp);
                 if (character == '\n') {
                         twoD[i][j] = '\0';
                         i++;
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
         int wordSize = strlen(argv[1]);
         int match = 0;
         int wordAppears = 0;
-        for (int m = 0; m < lineNum; m++) {
+        for (int m = 0; m < lineNum+1; m++) {
                 for (int n = 0, q = 0; n < fileLength; n++) {
                         if (twoD[m][n] == argv[1][q]) {
                                 match++;
